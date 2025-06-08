@@ -7,10 +7,10 @@ local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.F6
 
-local ui = Instance.new("ScreenGui")
-ui.Name = "ui"
-ui.Parent = game.CoreGui
-ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local UI = Instance.new("ScreenGui")
+UI.Name = "UI"
+UI.Parent = game.CoreGui
+UI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 coroutine.wrap(
     function()
@@ -94,7 +94,7 @@ function UI:Window(text, preset, closebind)
     local DragFrame = Instance.new("Frame")
 
     Main.Name = "Main"
-    Main.Parent = ui
+    Main.Parent = UI
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Main.BorderSizePixel = 0
