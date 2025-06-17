@@ -15,8 +15,8 @@ ImageButton.Position = UDim2.new(0.81, 0, 0, 0)
 ImageButton.Size = UDim2.new(0, 100, 0, 100)
 ImageButton.Image = "rbxassetid://3570695787"
 ImageButton.Draggable = true
-UICorner.CornerRadius = UDim.new(0, 0)
 UICorner.Parent = ImageButton
+UICorner.CornerRadius = UDim.new(0, 0)
 ImageButton.MouseButton1Down:connect(function()
     if ToggleUI == false then
         game.CoreGui.VapeUI.Main:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Quad", 0.4, true)
