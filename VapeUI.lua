@@ -1403,7 +1403,7 @@ function UI:Window(text, preset, closebind)
                 end
             )
 
-            RainbowToggle.MouseButton1Down:Connect(
+            RainbowToggle.MouseButton1Click:Connect(
                 function()
                     RainbowColorPicker = not RainbowColorPicker
 
