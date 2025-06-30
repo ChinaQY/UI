@@ -180,12 +180,12 @@ function UI:Window(text, preset, closebind)
 
     MakeDraggable(DragFrame, Main)
 
-    local UIToggle = false
+    local UIToggled = false
     UserInputService.InputBegan:Connect(
         function(v)
             if v.KeyCode == CloseBind then
-                if UIToggle == false then
-                    UIToggle = true
+                if UIToggled == false then
+                    UIToggled = true
 
                     Main:TweenSize(
                         UDim2.new(0, 0, 0, 0),
@@ -194,12 +194,12 @@ function UI:Window(text, preset, closebind)
                         0.6,
                         true,
                         function()
-                            UIEnable = false
+                            UIEnabled = false
                         end
                     )
                 else
-                    UIToggle = false
-                    UIEnable = true
+                    UIToggled = false
+                    UIEnabled = true
 
                     Main:TweenSize(
                         UDim2.new(0, 560, 0, 320),
@@ -534,7 +534,7 @@ function UI:Window(text, preset, closebind)
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
         function tabcontent:Toggle(text, default, callback)
-            local Toggle = false
+            local toggled = false
 
             local Toggle = Instance.new("TextButton")
             local ToggleCorner = Instance.new("UICorner")
@@ -621,7 +621,7 @@ function UI:Window(text, preset, closebind)
 
             Toggle.MouseButton1Click:Connect(
                 function()
-                    if Toggle == false then
+                    if toggled == false then
                         TweenService:Create(
                             Toggle,
                             TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
@@ -688,8 +688,8 @@ function UI:Window(text, preset, closebind)
                             true
                         )
                     end
-                    Toggle = not Toggle
-                    pcall(callback, Toggle)
+                    toggled = not toggled
+                    pcall(callback, toggled)
                 end
             )
 
@@ -726,7 +726,7 @@ function UI:Window(text, preset, closebind)
                     0.2,
                     true
                 )
-                Toggle = not Toggle
+                toggled = not toggled
             end
 
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
@@ -826,8 +826,8 @@ function UI:Window(text, preset, closebind)
                     0,
                     3
                 )
-                CurrentValueFrame:TweenSize(CurrentValueFramePos, "Out", "Sine", 0.1, true)
-                SlideCircle:TweenPosition(SlideCirclePos, "Out", "Sine", 0.1, true)
+                CurrentValueFrame:TweenSize(CurrentValueFramePos, "Out", "Sine", 00.1, true)
+                SlideCircle:TweenPosition(SlideCirclePos, "Out", "Sine", 00.1, true)
                 local Value = math.floor(((SlideCirclePos.X.Scale * max) / max) * (max - min) + min)
                 SliderValue.Text = tostring(Value)
                 pcall(callback, Value)
@@ -1034,7 +1034,7 @@ function UI:Window(text, preset, closebind)
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
         function tabcontent:Colorpicker(text, preset, callback)
-            local ColorPickerToggle = false
+            local ColorPickerToggled = false
             local OldToggleColor = Color3.fromRGB(0, 0, 0)
             local OldColor = Color3.fromRGB(0, 0, 0)
             local OldColorSelectionPosition = nil
@@ -1271,7 +1271,7 @@ function UI:Window(text, preset, closebind)
 
             ColorpickerBtn.MouseButton1Click:Connect(
                 function()
-                    if ColorPickerToggle == false then
+                    if ColorPickerToggled == false then
                         ColorSelection.Visible = true
                         HueSelection.Visible = true
                         Colorpicker:TweenSize(
@@ -1296,7 +1296,7 @@ function UI:Window(text, preset, closebind)
                         wait(0.2)
                         Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
                     end
-                    ColorPickerToggle = not ColorPickerToggle
+                    ColorPickerToggled = not ColorPickerToggled
                 end
             )
 
