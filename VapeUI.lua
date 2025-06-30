@@ -826,8 +826,8 @@ function UI:Window(text, preset, closebind)
                     0,
                     3
                 )
-                CurrentValueFrame:TweenSize(CurrentValueFramePos, "Out", "Sine", 00.1, true)
-                SlideCircle:TweenPosition(SlideCirclePos, "Out", "Sine", 00.1, true)
+                CurrentValueFrame:TweenSize(CurrentValueFramePos, "Out", "Sine", 0.1, true)
+                SlideCircle:TweenPosition(SlideCirclePos, "Out", "Sine", 0.1, true)
                 local Value = math.floor(((SlideCirclePos.X.Scale * max) / max) * (max - min) + min)
                 SliderValue.Text = tostring(Value)
                 pcall(callback, Value)
