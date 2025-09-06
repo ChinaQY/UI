@@ -5,7 +5,7 @@ local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
-local CloseBind = Enum.KeyCode.F6
+local CloseBind = Enum.KeyCode.F5
 
 local VapeUI = Instance.new("ScreenGui")
 VapeUI.Name = "VapeUI"
@@ -83,7 +83,7 @@ local function MakeDraggable(topbarobject, object)
 end
 
 function UI:Window(text, preset, closebind)
-    CloseBind = closebind or Enum.KeyCode.F6
+    CloseBind = closebind or Enum.KeyCode.F5
     PresetColor = preset or Color3.fromRGB(44, 120, 224)
     fs = false
     local Main = Instance.new("Frame")
